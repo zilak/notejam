@@ -1,3 +1,22 @@
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# .tfvars files
+*.tfvars
+
+.terraform/
+.idea/
+*.backup
+*.log
+~$*.xlsm
+*.tfstate.backup
+
+
+
 *.py[cod]
 
 # C extensions
