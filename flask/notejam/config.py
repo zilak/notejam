@@ -1,4 +1,11 @@
 import os
+import urllib
+
+basedir = os.path.abspath(os.path.dirname(__file__))
+
+# Configure Database URI: 
+
+params = urllib.quote_plus("DRIVER={SQL Server};SERVER=jonhysql.database.windows.net;DATABASE=notejam;UID=jonhy@jonhysql;PWD=P@ssw0rd!")
 
 
 class Config(object):
@@ -7,18 +14,17 @@ class Config(object):
     SECRET_KEY = 'notejam-flask-secret-key'
     CSRF_ENABLED = True
     CSRF_SESSION_KEY = 'notejam-flask-secret-key'
+    SQLALCHEMY_DATABASE_URI = "mssql+pyodbc:///?odbc_connect=%s" % params
 
 
 class ProductionConfig(Config):
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = os.environ.get('SQLALCHEMY_DATABASE_URI')
 
 
 class DevelopmentConfig(Config):
     DEVELOPMENT = True
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(os.getcwd(),
-                                                          'notejam.db')
+
 
 
 class TestingConfig(Config):
