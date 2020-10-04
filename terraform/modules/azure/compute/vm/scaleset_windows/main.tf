@@ -37,20 +37,24 @@ data azurerm_log_analytics_workspace "log_workspace" {
 
 
 resource "azurerm_windows_virtual_machine_scale_set" "scale_set" {
-  admin_password      = data.azurerm_key_vault_secret.kv_secret_username.value
-  admin_username      = data.azurerm_key_vault_secret.kv_secret_password.value
+  admin_password      = data.azurerm_key_vault_secret.kv_secret_password.value
+  admin_username      = data.azurerm_key_vault_secret.kv_secret_username.value
   instances           = var.instances
   location            = var.location
   name                = var.scale_set_name
   resource_group_name = var.rg_name
   sku                 = var.sku
   network_interface {
-    name = "${var.scale_set_name}-nic"
+    name    = "${var.scale_set_name}-nic"
+    primary = true
     ip_configuration {
 
       name      = "${var.scale_set_name}-ipconfig"
-      primary   = true
       subnet_id = data.azurerm_subnet.subnet.id
+      primary   = true
+      public_ip_address {
+        name = "publicip"
+      }
     }
   }
   os_disk {

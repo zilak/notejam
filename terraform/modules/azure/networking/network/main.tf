@@ -1,7 +1,4 @@
 #Deploy de uma VNET, respetivas subnets e respetivos NSGs das subnets e regras dos NSGs
-module "global_variables" {
-  source = "../../../global_variables"
-}
 
 data "azurerm_resource_group" "rg" {
   name = var.rg_name
@@ -14,16 +11,7 @@ resource "azurerm_virtual_network" "vnet" {
   resource_group_name = data.azurerm_resource_group.rg.name
   address_space       = var.vnet_address_space
 
-  tags = {
-    ChangeDate      = formatdate("YYYYMMDD", timestamp())
-    CostCenter      = var.tags.CostCenter
-    Environment     = var.tags.Environment
-    ExpirationDate  = var.tags.ExpirationDate
-    Owner           = var.tags.Owner
-    RunningInterval = var.tags.RunningInterval
-    ServiceType     = module.global_variables.network_service_type
-    Solution        = var.tags.Solution
-  }
+
   dns_servers = var.dns_server
 }
 
@@ -62,7 +50,7 @@ resource "azurerm_subnet" "subnet" {
   }
 
   lifecycle {
-    ignore_changes = ["network_security_group_id", "route_table_id"]
+    #ignore_changes = ["network_security_group_id", "route_table_id"]
   }
 
 }
@@ -72,17 +60,6 @@ resource "azurerm_network_security_group" "nsg" {
   name                = "${azurerm_subnet.subnet.*.name[count.index]}-nsg"
   location            = data.azurerm_resource_group.rg.location
   resource_group_name = data.azurerm_resource_group.rg.name
-
-  tags = {
-    ChangeDate      = formatdate("YYYYMMDD", timestamp())
-    CostCenter      = var.tags.CostCenter
-    Environment     = var.tags.Environment
-    ExpirationDate  = var.tags.ExpirationDate
-    Owner           = var.tags.Owner
-    RunningInterval = var.tags.RunningInterval
-    ServiceType     = module.global_variables.network_service_type
-    Solution        = var.tags.Solution
-  }
 
   depends_on = [azurerm_subnet.subnet]
 }
