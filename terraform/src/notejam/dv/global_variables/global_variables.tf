@@ -20,3 +20,7 @@ output "kv_name" {
 output "vnet_name" {
   value = "notejamvnetdev"
 }
+
+output "agw_name" {
+  value = "notejamagwdev"
+}

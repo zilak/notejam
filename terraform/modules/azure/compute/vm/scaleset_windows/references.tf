@@ -78,3 +78,8 @@ variable "sku" {
   type        = string
   description = "Sku/Size scale set"
 }
+
+variable "agw_pool_id" {
+  type        = string
+  description = "agw back pool id"
+}

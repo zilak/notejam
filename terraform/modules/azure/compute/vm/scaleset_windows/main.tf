@@ -49,9 +49,10 @@ resource "azurerm_windows_virtual_machine_scale_set" "scale_set" {
     primary = true
     ip_configuration {
 
-      name      = "${var.scale_set_name}-ipconfig"
-      subnet_id = data.azurerm_subnet.subnet.id
-      primary   = true
+      name                                         = "${var.scale_set_name}-ipconfig"
+      subnet_id                                    = data.azurerm_subnet.subnet.id
+      primary                                      = true
+      application_gateway_backend_address_pool_ids = [var.agw_pool_id]
       public_ip_address {
         name = "publicip"
       }

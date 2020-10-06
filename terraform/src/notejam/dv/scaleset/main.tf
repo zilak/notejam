@@ -7,7 +7,7 @@ module "global_variables" {
 
 module "scaleset" {
   source                  = "../../../../modules/azure/compute/vm/scaleset_windows"
-  image_id                = "/subscriptions/a38fac22-fdcb-4f4d-a843-e162d0f2f420/resourceGroups/nordrg/providers/Microsoft.Compute/images/notejamimage"
+  image_id                = "/subscriptions/a38fac22-fdcb-4f4d-a843-e162d0f2f420/resourceGroups/notejamdev/providers/Microsoft.Compute/images/notejamdev"
   instances               = 1
   kv_name                 = module.global_variables.kv_name
   kv_password_secret_name = "password"
@@ -23,4 +23,5 @@ module "scaleset" {
   subnet_rg_name          = module.global_variables.rg_name
   tags                    = {}
   vnet_name               = module.global_variables.vnet_name
+  agw_pool_id             = "/subscriptions/a38fac22-fdcb-4f4d-a843-e162d0f2f420/resourceGroups/notejamdev/providers/Microsoft.Network/applicationGateways/notejamagwdev/backendAddressPools/notejamvnetdev-agw-beap"
 }
