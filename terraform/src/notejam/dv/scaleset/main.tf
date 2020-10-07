@@ -14,10 +14,10 @@ module "scaleset" {
   kv_rg_name              = module.global_variables.rg_name
   kv_username_secret_name = "username"
   location                = module.global_variables.location
-  log_rg                  = "nordrg"
-  log_workspace           = "lognorddev"
-  rg_name                 = "nordrg"
-  scale_set_name          = "appdev"
+  log_rg                  = module.global_variables.rg_name
+  log_workspace           = module.global_variables.log_analytics_name
+  rg_name                 = module.global_variables.rg_name
+  scale_set_name          = "notejam"
   sku                     = "Standard_B2s"
   subnet_name             = "${module.global_variables.vnet_name}-app"
   subnet_rg_name          = module.global_variables.rg_name

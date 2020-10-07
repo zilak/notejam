@@ -24,3 +24,7 @@ output "vnet_name" {
 output "agw_name" {
   value = "notejamagwdev"
 }
+
+output "log_analytics_name" {
+  value = "notejamlog"
+}
