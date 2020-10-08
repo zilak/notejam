@@ -16,8 +16,10 @@ In this repository on the folder "terraform" is the code necessary to run. The o
 * terraform/src/notejam/dv/keyvault
 * terraform/src/notejam/dv/sqlserver
 * terraform/src/notejam/dv/appgw
-* terraform/src/notejam/dv/scaleset
+* terraform/src/notejam/dv/scaleset (change the argument agw_pool_id and image_id to the id of your application gateway and the Azure Image of notejam(you have to manual create it) )
 * terraform/src/notejam/dv/front_door (change variables to have application gateway new ip)
+
+
 
 ====================
 Supported frameworks
