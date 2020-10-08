@@ -2,15 +2,22 @@
 Notejam
 *******
 
-**The easy way to learn web frameworks**
 
-Do you know framework X and want to try framework Y?
-The easy way to start with a new framework is to compare it with frameworks you already know.
-The goal of the project is to help developers easily learn new frameworks by examples.
+====================
+Infrastructure provisioning
+====================
 
-Notejam is a unified sample web application (more than just "Hello World") implemented using different server-side frameworks.
-Currently python, php, ruby and javascript frameworks are supported.
+The infrastructure of this project will be provision via IaC, more specific by Terraform.
+In this repository on the folder "terraform" is the code necessary to run. The order how the code should be run is the following:
 
+* terraform/src/notejam/dv/rg
+* terraform/src/notejam/dv/vnet
+* terraform/src/notejam/dv/loganalytics
+* terraform/src/notejam/dv/keyvault
+* terraform/src/notejam/dv/sqlserver
+* terraform/src/notejam/dv/appgw
+* terraform/src/notejam/dv/scaleset
+* terraform/src/notejam/dv/front_door (change variables to have application gateway new ip)
 
 ====================
 Supported frameworks
