@@ -22,11 +22,7 @@ Installation and launching
 Clone
 -----
 
-Clone the repo:
-
-.. code-block:: bash
-
-    $ git clone git@github.com:komarserjio/notejam.git YOUR_PROJECT_DIR/
+Clone the repo
 
 -------
 Install
@@ -52,7 +48,7 @@ Start flask web server:
     $ cd YOUR_PROJECT_DIR/flask/
     $ python runserver.py
 
-Go to http://127.0.0.1:5000/ in your browser.
+Go to http://0.0.0.0:5000/ in your browser.
 
 If you do like that, all data added will be stored in a in-memory SQLite database.
 If you want to keep the state, export the environment variable ENVIRONMENT:

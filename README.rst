@@ -28,44 +28,8 @@ Supported frameworks
 **Python**
 
 
-* `Django <https://github.com/komarserjio/notejam/tree/master/django>`_
-* `Flask <https://github.com/komarserjio/notejam/tree/master/flask>`_
-* `Pyramid <https://github.com/komarserjio/notejam/tree/master/pyramid>`_
+* `Flask <https://github.com/zilak/notejam/tree/master/flask>`__
 
-**PHP**
-
-* `Laravel <https://github.com/komarserjio/notejam/tree/master/laravel>`_
-* `Yii <https://github.com/komarserjio/notejam/tree/master/yii>`_
-* `CakePHP <https://github.com/komarserjio/notejam/tree/master/cakephp>`_
-* `Nette <https://github.com/komarserjio/notejam/tree/master/nette/native_db>`_ / `Nette + Doctrine <https://github.com/komarserjio/notejam/tree/master/nette/doctrine>`_
-* `Symfony <https://github.com/komarserjio/notejam/tree/master/symfony>`_
-
-**Ruby**
-
-* `Padrino <https://github.com/komarserjio/notejam/tree/master/padrino>`_
-* `Ruby on Rails <https://github.com/komarserjio/notejam/tree/master/rubyonrails>`_
-
-**Java**
-
-* `Spring <https://github.com/komarserjio/notejam/tree/master/spring>`_
-
-**Javascript (node.js)**
-
-* `Express <https://github.com/komarserjio/notejam/tree/master/express>`_
-
-
-In progress
------------
-
-**Scala**
-
-* Play
-
-**Clojure**
-
-* Compojure
-
-... and more frameworks are coming soon.
 
 ====================
 Application overview
@@ -119,34 +83,4 @@ How to launch
 All implementations are SQLite based and quickly launchable by built-in web servers.
 Each implementation has instruction describing easy steps to install environment, launch and run tests.
 
-============
-Contribution
-============
 
-Contribution is more than welcome!
-Contribute improvements to existing applications to help them follow best practices
-or provide new implementation for unsupported framework.
-
-
-**Do you want to improve one of the existing implementations?**
-
-Each implementation has its own README with contribution details.
-
-**Do you want to add new framework?**
-
-Read `contribution guide <https://github.com/komarserjio/notejam/blob/master/contribute.rst>`_ for details.
-
-========
-Contacts
-========
-
-* Twitter: `@komarserjio <https://twitter.com/komarserjio>`_
-* Email: komarserjio <at> gmail.com
-
-=======
-License
-=======
-
-MIT © Serhii Komar.
-
-See `license <https://github.com/komarserjio/notejam/blob/master/license.rst>`_.
